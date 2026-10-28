@@ -1,0 +1,35 @@
+# One [[product]] block per page to watch.
+#
+#   name          shown in alerts and used by `monitor.py history`
+#   url           the product page
+#   selector      CSS selector for the price, only needed when the page has no
+#                 JSON-LD or price meta tags
+#   target_price  alert when the price is at or below this
+#   drop_percent  alert when the price falls at least this much since the last check
+#
+# books.toscrape.com is a practice site for scrapers. Its prices never change,
+# so with these settings only the target alert on "Sharp Objects" will fire.
+
+[[product]]
+name = "A Light in the Attic"
+url = "https://books.toscrape.com/catalogue/a-light-in-the-attic_1000/index.html"
+selector = ".price_color"
+drop_percent = 10
+
+[[product]]
+name = "Tipping the Velvet"
+url = "https://books.toscrape.com/catalogue/tipping-the-velvet_999/index.html"
+selector = ".price_color"
+drop_percent = 10
+
+[[product]]
+name = "Soumission"
+url = "https://books.toscrape.com/catalogue/soumission_998/index.html"
+selector = ".price_color"
+target_price = 45
+
+[[product]]
+name = "Sharp Objects"
+url = "https://books.toscrape.com/catalogue/sharp-objects_997/index.html"
+selector = ".price_color"
+target_price = 50
